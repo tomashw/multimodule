@@ -1,0 +1,49 @@
+# mac
+*.DS_Store
+
+# vi
+*.swp
+
+# Logs
+log
+log/
+log/*
+*.log
+logs
+
+# Node dependencies
+node_modules
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+#config/udiDevLocal.json
+
+# Intellij IDEA
+*.iml
+.idea/
+
+# Maven
+target/
+
+# Misc
+*.rdb
+.coverdata
+.coverrun
+*.pyc
+tmp/
+
+# Tests
+testresults
+test-reports.xml
+xunit.xml
+dump.rdb
+tests/.nyc_output/
+tests/.nyc_output/*
+tests/package-lock.json
+package-lock.json
+/package-lock.json
+/tests/package-lock.json
+

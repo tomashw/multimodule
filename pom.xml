@@ -1,0 +1,136 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.web</groupId>
+  <artifactId>multimodule</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>multimodule-project</name>
+  <url>http://maven.apache.org</url>
+  <description>A demo project</description>
+  
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <build>
+
+  <plugins>  
+
+    <!-- Change path to JDK and see stdout for mvn clean compile -->
+    <!-- Play with $JAVA_HOME variable -->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.7.0</version>
+        <configuration>
+          <verbose>true</verbose>
+          <fork>true</fork>
+          <source>${maven.compiler.source}</source> 
+          <target>${maven.compiler.target}</target>
+          <executable>/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/bin/javac</executable>
+          <compilerVersion>1.7</compilerVersion>
+        </configuration>
+      </plugin>
+    
+    </plugins>
+      
+  </build>  
+
+  <modules>
+      <module>core</module>
+      <module>engine</module>
+  </modules>
+
+  <!--
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+      <comments>A business-friendly OSS license</comments>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>jdoe</id>
+      <name>John Doe</name>
+      <email>jdoe@example.com</email>
+      <url>http://www.example.com/jdoe</url>
+      <organization>ACME</organization>
+      <organizationUrl>http://www.example.com</organizationUrl>
+      <roles>
+        <role>architect</role>
+        <role>developer</role>
+      </roles>
+      <timezone>America/New_York</timezone>
+      <properties>
+        <picUrl>http://www.example.com/jdoe/pic</picUrl>
+      </properties>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <system>github</system>
+    <url>https://github.com/junit-team/junit/issues</url>
+  </issueManagement>
+  
+  <ciManagement>
+    <system>jenkins</system>
+    <url>https://junit.ci.cloudbees.com/</url>
+  </ciManagement>
+  -->
+  
+  <dependencies>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>LATEST</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>hibernate</groupId>
+      <artifactId>hibernate</artifactId>
+      <version>2.0-final</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>23.6-jre</version>
+    </dependency>
+
+  </dependencies>
+
+  <profiles> 
+   <profile>
+     <id>prod</id>
+         <!--<activation>
+           <activeByDefault>true</activeByDefault>
+         </activation>-->
+         <build>
+            <plugins>
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <configuration>
+                      <debug>false</debug> 
+                      <optimize>true</optimize>
+                  </configuration>
+                </plugin>
+            </plugins>
+         </build>
+         
+         <modules>
+          <module>core</module>
+          <module>engine</module>
+         </modules>
+
+   </profile>
+  </profiles>
+
+</project>
