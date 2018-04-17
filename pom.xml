@@ -10,8 +10,8 @@
   <description>A demo project</description>
   
   <properties>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <build>
@@ -29,7 +29,7 @@
           <fork>true</fork>
           <source>${maven.compiler.source}</source> 
           <target>${maven.compiler.target}</target>
-          <executable>/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/bin/javac</executable>
+          <!-- <executable>/Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home/bin/javac>executable> -->
           <compilerVersion>1.7</compilerVersion>
         </configuration>
       </plugin>
